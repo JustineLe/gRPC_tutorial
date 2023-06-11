@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package message;
+
+service Message{
+  // A simple RPC.
+  //
+  // Obtains the MessageResponse at a given position.
+ rpc GetServerResponse(Data) returns (DataResponse) {}
+
+}
+
+message Data{
+ string message = 1;
+}
+
+message DataResponse{
+ string message = 1;
+ bool received = 2;
+}
